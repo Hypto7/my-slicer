@@ -1,0 +1,17 @@
+# Python junk
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Your own test models and slicer output (often huge - keep them off GitHub)
+models/
+output/
+*.gcode
+*.3mf
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
