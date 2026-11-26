@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>my-slicer</title>
+  <meta name="description" content="A free 3D printer slicer that runs in your browser." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>my-slicer</h1>
+    <span class="tag">3D printer slicer in your browser</span>
+  </header>
+
+  <main>
+    <section id="view">
+      <div id="viewer"></div>
+      <div id="drop-hint">Drop an STL file here</div>
+      <div id="empty-hint">Load an STL file or try a sample to start</div>
+      <div id="layer-bar" hidden>
+        <input id="layer" type="range" min="0" max="0" value="0" aria-label="Layer" />
+        <span id="layer-label">Layer 1</span>
+        <button id="toggle-model" class="small">Show model</button>
+      </div>
+      <div id="legend" hidden></div>
+    </section>
+
+    <aside id="panel">
+      <div class="card">
+        <h2>1. Model</h2>
+        <label class="file-btn">
+          <input id="file" type="file" accept=".stl,model/stl" />
+          Open STL file
+        </label>
+        <div class="row" id="samples"></div>
+        <div id="model-info" class="muted"></div>
+        <div id="model-tools" hidden>
+          <div class="row">
+            <span class="muted">Rotate 90°</span>
+            <button data-rot="x" class="small">X</button>
+            <button data-rot="y" class="small">Y</button>
+            <button data-rot="z" class="small">Z</button>
+          </div>
+          <div class="row">
+            <label for="scale" class="muted">Scale</label>
+            <input id="scale" type="number" value="100" min="1" max="10000" step="5" />
+            <span class="muted">%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>2. Settings</h2>
+        <div class="row">
+          <label for="preset" class="muted">Preset</label>
+          <select id="preset"></select>
+          <button id="reset" class="small" title="Back to defaults">Reset</button>
+        </div>
+        <div id="settings"></div>
+      </div>
+
+      <div class="card">
+        <h2>3. Slice</h2>
+        <button id="slice" class="primary" disabled>Slice</button>
+        <div id="progress" hidden><div></div></div>
+        <div id="status" class="muted"></div>
+        <ul id="warnings"></ul>
+        <div id="stats" hidden></div>
+        <button id="download" class="primary" hidden>Download G-code</button>
+      </div>
+
+      <p class="muted foot">
+        Open source (MIT) ·
+        <a href="https://github.com/Hypto7/my-slicer">GitHub</a>
+      </p>
+    </aside>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

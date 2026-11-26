@@ -1,0 +1,12 @@
+{
+  "name": "my-slicer",
+  "version": "0.1.0",
+  "description": "A 3D printer slicer that runs in your web browser",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test",
+    "start": "python3 -m http.server 8000"
+  }
+}
